@@ -7,16 +7,22 @@ class AppTextField extends StatelessWidget {
     super.key,
     this.top = 0.0,
     required this.labelText,
+    this.validator,
+    this.controller,
   });
 
   final double top;
   final String labelText;
+  final String? Function(String?)? validator;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: top),
       child: TextFormField(
+        controller: controller,
+        validator: validator,
         keyboardAppearance: Brightness.dark,
         style: const TextStyle(color: AppColors.kBlack),
         cursorColor: AppColors.kTextGrey,
@@ -32,6 +38,14 @@ class AppTextField extends StatelessWidget {
           focusedBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.zero,
             borderSide: BorderSide(color: Colors.grey, width: 0.2),
+          ),
+          errorBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.zero,
+            borderSide: BorderSide(color: Colors.red, width: 0.2),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.zero,
+            borderSide: BorderSide(color: Colors.red, width: 0.2),
           ),
         ),
       ),

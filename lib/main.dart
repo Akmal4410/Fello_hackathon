@@ -1,9 +1,16 @@
 import 'package:fello_hackathon/presentation/feature/splash/splash_page.dart';
 import 'package:fello_hackathon/utils/app_colors.dart';
+import 'package:fello_hackathon/utils/configure_hive_db.dart';
+import 'package:fello_hackathon/utils/dependency_injection/dependency_injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:injectable/injectable.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await configureDependencies(Environment.dev);
+  await MyLocalDB.configureHiveDB();
+
   runApp(const MyApp());
 }
 
