@@ -1,5 +1,4 @@
 import 'package:fello_hackathon/domain/entity/goal.dart';
-import 'package:fello_hackathon/presentation/feature/home/home_bloc/home_bloc.dart';
 import 'package:fello_hackathon/utils/assets.dart';
 import 'package:fello_hackathon/utils/constant_size.dart';
 import 'package:fello_hackathon/utils/text_style.dart';
