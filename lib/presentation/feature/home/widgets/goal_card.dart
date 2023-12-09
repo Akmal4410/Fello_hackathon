@@ -1,6 +1,9 @@
+import 'package:fello_hackathon/domain/entity/goal.dart';
+import 'package:fello_hackathon/presentation/feature/home/home_bloc/home_bloc.dart';
 import 'package:fello_hackathon/utils/assets.dart';
 import 'package:fello_hackathon/utils/constant_size.dart';
 import 'package:fello_hackathon/utils/text_style.dart';
+import 'package:fello_hackathon/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
@@ -8,7 +11,10 @@ import 'package:lottie/lottie.dart';
 class GoalCard extends StatelessWidget {
   const GoalCard({
     super.key,
+    required this.goal,
   });
+
+  final Goal goal;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +44,7 @@ class GoalCard extends StatelessWidget {
               ),
               Expanded(
                 child: Text(
-                  "Building a game PC",
+                  goal.goalName,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.end,
@@ -53,7 +59,7 @@ class GoalCard extends StatelessWidget {
               Align(
                 alignment: Alignment.topRight,
                 child: Text(
-                  "25%",
+                  "${goal.percentage}}%",
                   style: kTextStyle12RegularGrey,
                 ),
               ),
@@ -66,7 +72,7 @@ class GoalCard extends StatelessWidget {
                     style: kTextStyle12RegularGrey,
                   ),
                   Text(
-                    "\$ 10,000",
+                    "\$ ${goal.totalAmount}",
                     style: kTextStyle12RegularGrey,
                   ),
                 ],
@@ -76,11 +82,11 @@ class GoalCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Mar 24",
+                    convertDateTime(goal.goalDate),
                     style: kTextStyle14MediumBlack,
                   ),
                   Text(
-                    "\$ 5000",
+                    "\$ ${goal.currentAmount}",
                     style: kTextStyle14MediumBlack,
                   ),
                 ],

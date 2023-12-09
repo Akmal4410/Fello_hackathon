@@ -37,6 +37,13 @@ class _SignupBodyState extends State<SignupBody> {
   final _formKey = GlobalKey<FormState>();
 
   @override
+  void dispose() {
+    firstNameController.dispose();
+    lastNameController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignupBloc, SignupState>(
       listener: (context, state) {

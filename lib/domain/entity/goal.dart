@@ -4,6 +4,7 @@ class Goal {
   final double percentage;
   final DateTime goalDate;
   final double totalAmount;
+  final double currentAmount;
 
   Goal({
     required this.id,
@@ -11,5 +12,6 @@ class Goal {
     required this.percentage,
     required this.goalDate,
     required this.totalAmount,
+    required this.currentAmount,
   });
 }

@@ -22,13 +22,14 @@ class GoalModelAdapter extends TypeAdapter<GoalModel> {
       percentage: fields[2] as double,
       goalDate: fields[3] as DateTime,
       totalAmount: fields[4] as double,
+      currentAmount: fields[5] as double,
     );
   }
 
   @override
   void write(BinaryWriter writer, GoalModel obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class GoalModelAdapter extends TypeAdapter<GoalModel> {
       ..writeByte(3)
       ..write(obj.goalDate)
       ..writeByte(4)
-      ..write(obj.totalAmount);
+      ..write(obj.totalAmount)
+      ..writeByte(5)
+      ..write(obj.currentAmount);
   }
 
   @override

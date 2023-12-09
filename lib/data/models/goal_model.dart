@@ -18,11 +18,15 @@ class GoalModel extends HiveObject {
   @HiveField(4)
   final double totalAmount;
 
+  @HiveField(5)
+  final double currentAmount;
+
   GoalModel({
     required this.id,
     required this.goalName,
     required this.percentage,
     required this.goalDate,
     required this.totalAmount,
+    required this.currentAmount,
   });
 }

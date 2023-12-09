@@ -20,8 +20,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocProvider(
-        create: (context) =>
-            getIt<HomeBloc>()..add(const HomeEvent.getAllGoals()),
+        create: (context) => getIt<HomeBloc>()
+          ..add(const HomeEvent.getAllGoals())
+          ..add(const HomeEvent.getUserDetails()),
         child: const HomePageBody(),
       ),
     );
@@ -86,7 +87,7 @@ class HomePageBody extends StatelessWidget {
               childAspectRatio: 1.3,
             ),
             itemBuilder: (context, index) {
-              return const GoalCard();
+              return GoalCard(goal: goalList[index]);
             },
           );
   }
@@ -107,7 +108,10 @@ class HomePageBody extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const AddGoalPage()),
-                );
+                ).then((value) {
+                  BlocProvider.of<HomeBloc>(context)
+                      .add(const HomeEvent.getAllGoals());
+                });
               },
               icon: const Icon(
                 Icons.add,

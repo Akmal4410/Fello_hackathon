@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 abstract class SignupDatasource {
   Future<bool> isSignedUp();
   Future<Either<String, Unit>> signup(String firstName, String lastName);
+  Future<String> getUserData();
 }
 
 @LazySingleton(as: SignupDatasource)
@@ -44,5 +45,21 @@ class LocalSignupDatasoucre extends SignupDatasource {
       debugPrint(e.toString());
     }
     return left("Something went wrong");
+  }
+
+  @override
+  Future<String> getUserData() async {
+    String userName = "";
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final userDataJson = prefs.getString(appUser);
+      if (userDataJson != null) {
+        final userData = jsonDecode(userDataJson);
+        userName = "${userData["firstName"]} ${userData["lastName"]}";
+      }
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+    return userName;
   }
 }

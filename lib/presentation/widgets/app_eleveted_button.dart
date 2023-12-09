@@ -49,8 +49,6 @@ class AppElevetedButton extends StatelessWidget {
                         height: 12.r,
                         child: const CircularProgressIndicator(
                           strokeWidth: 2.5,
-                          // valueColor:
-                          //     AlwaysStoppedAnimation<Color>(Colors.white),
                         ),
                       ),
                     ],

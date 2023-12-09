@@ -19,32 +19,38 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getAllGoals,
+    required TResult Function() getUserDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getAllGoals,
+    TResult? Function()? getUserDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAllGoals,
+    TResult Function()? getUserDetails,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetAllGoals value) getAllGoals,
+    required TResult Function(_GetUserDetails value) getUserDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetAllGoals value)? getAllGoals,
+    TResult? Function(_GetUserDetails value)? getUserDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetAllGoals value)? getAllGoals,
+    TResult Function(_GetUserDetails value)? getUserDetails,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,6 +112,7 @@ class _$GetAllGoalsImpl implements _GetAllGoals {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getAllGoals,
+    required TResult Function() getUserDetails,
   }) {
     return getAllGoals();
   }
@@ -114,6 +121,7 @@ class _$GetAllGoalsImpl implements _GetAllGoals {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getAllGoals,
+    TResult? Function()? getUserDetails,
   }) {
     return getAllGoals?.call();
   }
@@ -122,6 +130,7 @@ class _$GetAllGoalsImpl implements _GetAllGoals {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAllGoals,
+    TResult Function()? getUserDetails,
     required TResult orElse(),
   }) {
     if (getAllGoals != null) {
@@ -134,6 +143,7 @@ class _$GetAllGoalsImpl implements _GetAllGoals {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetAllGoals value) getAllGoals,
+    required TResult Function(_GetUserDetails value) getUserDetails,
   }) {
     return getAllGoals(this);
   }
@@ -142,6 +152,7 @@ class _$GetAllGoalsImpl implements _GetAllGoals {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetAllGoals value)? getAllGoals,
+    TResult? Function(_GetUserDetails value)? getUserDetails,
   }) {
     return getAllGoals?.call(this);
   }
@@ -150,6 +161,7 @@ class _$GetAllGoalsImpl implements _GetAllGoals {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetAllGoals value)? getAllGoals,
+    TResult Function(_GetUserDetails value)? getUserDetails,
     required TResult orElse(),
   }) {
     if (getAllGoals != null) {
@@ -164,9 +176,114 @@ abstract class _GetAllGoals implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$GetUserDetailsImplCopyWith<$Res> {
+  factory _$$GetUserDetailsImplCopyWith(_$GetUserDetailsImpl value,
+          $Res Function(_$GetUserDetailsImpl) then) =
+      __$$GetUserDetailsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetUserDetailsImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$GetUserDetailsImpl>
+    implements _$$GetUserDetailsImplCopyWith<$Res> {
+  __$$GetUserDetailsImplCopyWithImpl(
+      _$GetUserDetailsImpl _value, $Res Function(_$GetUserDetailsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetUserDetailsImpl implements _GetUserDetails {
+  const _$GetUserDetailsImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.getUserDetails()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetUserDetailsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getAllGoals,
+    required TResult Function() getUserDetails,
+  }) {
+    return getUserDetails();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getAllGoals,
+    TResult? Function()? getUserDetails,
+  }) {
+    return getUserDetails?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getAllGoals,
+    TResult Function()? getUserDetails,
+    required TResult orElse(),
+  }) {
+    if (getUserDetails != null) {
+      return getUserDetails();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetAllGoals value) getAllGoals,
+    required TResult Function(_GetUserDetails value) getUserDetails,
+  }) {
+    return getUserDetails(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetAllGoals value)? getAllGoals,
+    TResult? Function(_GetUserDetails value)? getUserDetails,
+  }) {
+    return getUserDetails?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetAllGoals value)? getAllGoals,
+    TResult Function(_GetUserDetails value)? getUserDetails,
+    required TResult orElse(),
+  }) {
+    if (getUserDetails != null) {
+      return getUserDetails(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetUserDetails implements HomeEvent {
+  const factory _GetUserDetails() = _$GetUserDetailsImpl;
+}
+
+/// @nodoc
 mixin _$HomeState {
   bool get isLoading => throw _privateConstructorUsedError;
   List<Goal> get goalList => throw _privateConstructorUsedError;
+  String get greeting => throw _privateConstructorUsedError;
+  String get userName => throw _privateConstructorUsedError;
+  double get totalAmount => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -178,7 +295,12 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({bool isLoading, List<Goal> goalList});
+  $Res call(
+      {bool isLoading,
+      List<Goal> goalList,
+      String greeting,
+      String userName,
+      double totalAmount});
 }
 
 /// @nodoc
@@ -196,6 +318,9 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   $Res call({
     Object? isLoading = null,
     Object? goalList = null,
+    Object? greeting = null,
+    Object? userName = null,
+    Object? totalAmount = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -206,6 +331,18 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.goalList
           : goalList // ignore: cast_nullable_to_non_nullable
               as List<Goal>,
+      greeting: null == greeting
+          ? _value.greeting
+          : greeting // ignore: cast_nullable_to_non_nullable
+              as String,
+      userName: null == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
+      totalAmount: null == totalAmount
+          ? _value.totalAmount
+          : totalAmount // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -218,7 +355,12 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, List<Goal> goalList});
+  $Res call(
+      {bool isLoading,
+      List<Goal> goalList,
+      String greeting,
+      String userName,
+      double totalAmount});
 }
 
 /// @nodoc
@@ -234,6 +376,9 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? goalList = null,
+    Object? greeting = null,
+    Object? userName = null,
+    Object? totalAmount = null,
   }) {
     return _then(_$HomeStateImpl(
       isLoading: null == isLoading
@@ -244,6 +389,18 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value._goalList
           : goalList // ignore: cast_nullable_to_non_nullable
               as List<Goal>,
+      greeting: null == greeting
+          ? _value.greeting
+          : greeting // ignore: cast_nullable_to_non_nullable
+              as String,
+      userName: null == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String,
+      totalAmount: null == totalAmount
+          ? _value.totalAmount
+          : totalAmount // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -252,7 +409,11 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 
 class _$HomeStateImpl implements _HomeState {
   const _$HomeStateImpl(
-      {required this.isLoading, required final List<Goal> goalList})
+      {required this.isLoading,
+      required final List<Goal> goalList,
+      required this.greeting,
+      required this.userName,
+      required this.totalAmount})
       : _goalList = goalList;
 
   @override
@@ -266,8 +427,15 @@ class _$HomeStateImpl implements _HomeState {
   }
 
   @override
+  final String greeting;
+  @override
+  final String userName;
+  @override
+  final double totalAmount;
+
+  @override
   String toString() {
-    return 'HomeState(isLoading: $isLoading, goalList: $goalList)';
+    return 'HomeState(isLoading: $isLoading, goalList: $goalList, greeting: $greeting, userName: $userName, totalAmount: $totalAmount)';
   }
 
   @override
@@ -277,12 +445,23 @@ class _$HomeStateImpl implements _HomeState {
             other is _$HomeStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            const DeepCollectionEquality().equals(other._goalList, _goalList));
+            const DeepCollectionEquality().equals(other._goalList, _goalList) &&
+            (identical(other.greeting, greeting) ||
+                other.greeting == greeting) &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
+            (identical(other.totalAmount, totalAmount) ||
+                other.totalAmount == totalAmount));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, isLoading, const DeepCollectionEquality().hash(_goalList));
+      runtimeType,
+      isLoading,
+      const DeepCollectionEquality().hash(_goalList),
+      greeting,
+      userName,
+      totalAmount);
 
   @JsonKey(ignore: true)
   @override
@@ -294,12 +473,21 @@ class _$HomeStateImpl implements _HomeState {
 abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {required final bool isLoading,
-      required final List<Goal> goalList}) = _$HomeStateImpl;
+      required final List<Goal> goalList,
+      required final String greeting,
+      required final String userName,
+      required final double totalAmount}) = _$HomeStateImpl;
 
   @override
   bool get isLoading;
   @override
   List<Goal> get goalList;
+  @override
+  String get greeting;
+  @override
+  String get userName;
+  @override
+  double get totalAmount;
   @override
   @JsonKey(ignore: true)
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>

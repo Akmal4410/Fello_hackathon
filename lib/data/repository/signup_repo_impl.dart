@@ -25,4 +25,9 @@ class SignupRepo implements ISignupRepo {
   Future<Either<String, Unit>> signup(String firstName, String lastName) async {
     return await _datasource.signup(firstName, lastName);
   }
+
+  @override
+  Future<String> getUserData() async {
+    return await _datasource.getUserData();
+  }
 }

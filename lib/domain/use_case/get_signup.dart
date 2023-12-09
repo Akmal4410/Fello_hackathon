@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 abstract class GetSignup {
   Future<bool> isSignedUp();
   Future<Either<String, Unit>> signup(String firstName, String lastName);
+  Future<String> getUserData();
 }
 
 @LazySingleton(as: GetSignup)
@@ -21,5 +22,10 @@ class GetSignupImpl extends GetSignup {
   @override
   Future<Either<String, Unit>> signup(String firstName, String lastName) {
     return _iSignupRepo.signup(firstName, lastName);
+  }
+
+  @override
+  Future<String> getUserData() {
+    return _iSignupRepo.getUserData();
   }
 }

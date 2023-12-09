@@ -9,18 +9,21 @@ class AppTextField extends StatelessWidget {
     required this.labelText,
     this.validator,
     this.controller,
+    this.keyboardType = TextInputType.emailAddress,
   });
 
   final double top;
   final String labelText;
   final String? Function(String?)? validator;
   final TextEditingController? controller;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: top),
       child: TextFormField(
+        keyboardType: keyboardType,
         controller: controller,
         validator: validator,
         keyboardAppearance: Brightness.dark,
@@ -43,7 +46,7 @@ class AppTextField extends StatelessWidget {
             borderRadius: BorderRadius.zero,
             borderSide: BorderSide(color: Colors.red, width: 0.2),
           ),
-          focusedErrorBorder: OutlineInputBorder(
+          focusedErrorBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.zero,
             borderSide: BorderSide(color: Colors.red, width: 0.2),
           ),

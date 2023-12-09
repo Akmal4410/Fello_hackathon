@@ -9,6 +9,18 @@ class GoalMapper {
       percentage: goal.percentage,
       goalDate: goal.goalDate,
       totalAmount: goal.totalAmount,
+      currentAmount: goal.currentAmount,
+    );
+  }
+
+  static GoalModel fromGoal(Goal goal) {
+    return GoalModel(
+      id: goal.id,
+      goalName: goal.goalName,
+      percentage: goal.percentage,
+      goalDate: goal.goalDate,
+      totalAmount: goal.totalAmount,
+      currentAmount: goal.currentAmount,
     );
   }
 }
