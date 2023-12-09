@@ -1,4 +1,4 @@
-import 'package:fello_hackathon/presentation/feature/welcome/welcome_page.dart';
+import 'package:fello_hackathon/presentation/feature/signup/signup_page.dart';
 import 'package:fello_hackathon/utils/assets.dart';
 import 'package:fello_hackathon/utils/text_style.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +34,7 @@ class SplashPage extends StatelessWidget {
       () {
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => const WelcomePage()),
+          MaterialPageRoute(builder: (context) => const SignupPage()),
           (route) => false,
         );
       },
